@@ -10,7 +10,7 @@ import com.iknowus.dataapp.DUsuario;
 import com.iknowus.entity.Comentario;
 import com.iknowus.entity.Publicacion;
 import com.iknowus.entity.Usuario;
-import com.iknowus.entity.UsuarioPublicacion;
+import com.iknowus.entity.Usuario_Publicacion;
 
 public class BComentario extends Business {
 

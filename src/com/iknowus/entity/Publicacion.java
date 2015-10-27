@@ -30,7 +30,7 @@ public class Publicacion  extends Entity{
 	@Ignored
 	private List<Usuario> lstAutores = new ArrayList<Usuario>();
 	@Ignored
-	private List<DetallePublicacion> lstDetallePublicacion = new ArrayList<DetallePublicacion>();
+	private List<Detalle_Publicacion> lstDetallePublicacion = new ArrayList<Detalle_Publicacion>();
 	@Ignored
 	private Area area;
 	
@@ -118,10 +118,10 @@ public class Publicacion  extends Entity{
 	public void setLstAutores(List<Usuario> lstAutores) {
 		this.lstAutores = lstAutores;
 	}
-	public List<DetallePublicacion> getLstDetallePublicacion() {
+	public List<Detalle_Publicacion> getLstDetallePublicacion() {
 		return lstDetallePublicacion;
 	}
-	public void setLstDetallePublicacion(List<DetallePublicacion> lstDetallePublicacion) {
+	public void setLstDetallePublicacion(List<Detalle_Publicacion> lstDetallePublicacion) {
 		this.lstDetallePublicacion = lstDetallePublicacion;
 	}
 	public Area getArea() {

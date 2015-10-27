@@ -11,7 +11,7 @@ import org.apache.http.util.TextUtils;
 import com.iknowus.App;
 import com.iknowus.Constantes;
 import com.iknowus.data.Data;
-import com.iknowus.entity.UsuarioPublicacion;
+import com.iknowus.entity.Usuario_Publicacion;
 
 
 public class DUsuario<T> extends Data<T> {
@@ -28,9 +28,9 @@ public class DUsuario<T> extends Data<T> {
 		return super.buscar("select * from " + this.tableName + " where correo_usuario = '" + email + "'");
 	}
 	
-	public List<T> listarAutores(List<UsuarioPublicacion> list) {
+	public List<T> listarAutores(List<Usuario_Publicacion> list) {
 		String ids = "(";
-		for(UsuarioPublicacion up:list){
+		for(Usuario_Publicacion up:list){
 			ids += up.getId_usuario() + ",";
 		}
 		ids += "0)";

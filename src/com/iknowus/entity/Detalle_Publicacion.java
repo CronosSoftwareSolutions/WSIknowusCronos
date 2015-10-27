@@ -3,7 +3,7 @@ package com.iknowus.entity;
 import com.iknowus.entities.Entity;
 import com.iknowus.entities.annotations.KeyField;
 
-public class DetallePublicacion  extends Entity{
+public class Detalle_Publicacion  extends Entity{
 	@KeyField
 	private Long id;	
 	private Long id_publicacion;

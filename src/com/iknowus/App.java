@@ -14,7 +14,7 @@ public class App {
 	public static String version = "0.0.1";
 
 	private static final Logger Log = Logger.getLogger(App.class);
-	private static String urlConfiguracion = "C://dualBiz//Iknowus//configuration.properties";
+	private static String urlConfiguracion = "C://dualbiz//Iknowus//configuration.properties";
 
 	/**
 	 * Metodo que carga los datos del archivo de configuracion de la aplicacion.

@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
 import com.iknowus.dataapp.DPublicacion;
 import com.iknowus.dataapp.DUsuario;
 import com.iknowus.entity.Publicacion;
 import com.iknowus.entity.Usuario;
-import com.iknowus.entity.UsuarioPublicacion;
+import com.iknowus.entity.Usuario_Publicacion;
+import com.iknowus.util.Log;
 
 public class BPublicacion extends Business {
 
@@ -23,13 +25,16 @@ public class BPublicacion extends Business {
 	public Publicacion searchById(Long Id) {
 		DPublicacion<Publicacion> dal = null; 
 		try {
-			dal = new DPublicacion<Publicacion>(Publicacion.class, connection);
-			Publicacion pub = dal.buscar(Id);
-			List<Publicacion> lst = new ArrayList<Publicacion>();
-			lst.add(pub);
-			loadRelations(lst); 
-			return pub;
+			dal = new DPublicacion<Publicacion>(Publicacion.class, connection);			
+			Publicacion pub = dal.buscar(Id);			
+			List<Publicacion> lst = new ArrayList<Publicacion>();			
+			lst.add(pub);			
+			loadRelations(lst);			
+			return pub; 
 		} catch (Exception e) {
+			Log.info("e");
+			Log.info(e.getMessage());
+			Log.error(e.getMessage());
 			e.printStackTrace();
 		}
 		return null;

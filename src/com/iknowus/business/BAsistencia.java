@@ -12,7 +12,7 @@ import com.iknowus.entity.Asistencia;
 import com.iknowus.entity.Comentario;
 import com.iknowus.entity.Publicacion;
 import com.iknowus.entity.Usuario;
-import com.iknowus.entity.UsuarioPublicacion;
+import com.iknowus.entity.Usuario_Publicacion;
 
 public class BAsistencia extends Business {
 

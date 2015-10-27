@@ -291,15 +291,16 @@ abstract public class Wrapper<T> {
 
 	public String getTableName(Class<T> cl){
 		String[] buf = cl.getClass().getName().split("\\.");  
-		return (buf[buf.length-2] + "_" + buf[buf.length-1]).toLowerCase();
+//		return (buf[buf.length-2] + "_" + buf[buf.length-1]).toLowerCase();
+		return (buf[buf.length-1]).toLowerCase();
 	}
 
 	public String getTableNameT(Class<T> cl) {
 		String name = cl.getPackage().getName();
 		int lastIndexOf = name.lastIndexOf(".");
 		String substring = name.substring(lastIndexOf + 1, name.length());
-		substring = substring + "_" + cl.getSimpleName();
-		substring = substring.toLowerCase();
+//		substring = substring + "_" + cl.getSimpleName();
+		substring = cl.getSimpleName().toLowerCase();
 		return substring;
 	}
 

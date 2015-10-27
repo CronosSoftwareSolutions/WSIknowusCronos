@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.iknowus.dataapp.DUsuario;
 import com.iknowus.entity.Usuario;
-import com.iknowus.entity.UsuarioPublicacion;
+import com.iknowus.entity.Usuario_Publicacion;
 
 public class BUsuario extends Business {
 
@@ -40,7 +40,7 @@ public class BUsuario extends Business {
 		return null;
 	}
 	
-	public List<Usuario> buscar(List<UsuarioPublicacion> lista) {
+	public List<Usuario> buscar(List<Usuario_Publicacion> lista) {
 		DUsuario<Usuario> dal = null;
 		try {
 			dal = new DUsuario<Usuario>(Usuario.class, connection);

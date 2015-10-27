@@ -19,7 +19,7 @@
 	</servlet-mapping>
 	<context-param>
 		<param-name>javax.ws.rs.Application</param-name>
-		<param-value>com.dlbz.ws.ServicesApplication</param-value>
+		<param-value>com.iknowus.ws.ServicesApplication</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>

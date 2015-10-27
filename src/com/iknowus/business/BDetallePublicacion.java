@@ -6,10 +6,10 @@ import java.util.List;
 import com.iknowus.dataapp.DDetallePublicacion;
 import com.iknowus.dataapp.DPublicacion;
 import com.iknowus.dataapp.DUsuario;
-import com.iknowus.entity.DetallePublicacion;
+import com.iknowus.entity.Detalle_Publicacion;
 import com.iknowus.entity.Publicacion;
 import com.iknowus.entity.Usuario;
-import com.iknowus.entity.UsuarioPublicacion;
+import com.iknowus.entity.Usuario_Publicacion;
 
 public class BDetallePublicacion extends Business {
 
@@ -21,10 +21,10 @@ public class BDetallePublicacion extends Business {
 		super(conection);
 	}
 
-	public DetallePublicacion searchById(Long Id) {
-		DDetallePublicacion<DetallePublicacion> dal = null; 
+	public Detalle_Publicacion searchById(Long Id) {
+		DDetallePublicacion<Detalle_Publicacion> dal = null; 
 		try {
-			dal = new DDetallePublicacion<DetallePublicacion>(DetallePublicacion.class, connection);
+			dal = new DDetallePublicacion<Detalle_Publicacion>(Detalle_Publicacion.class, connection);
 			return dal.buscar(Id);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -33,10 +33,10 @@ public class BDetallePublicacion extends Business {
 	}
 	
 	
-	public List<DetallePublicacion> listarTipo(Long id_publicacion) {
-		DDetallePublicacion<DetallePublicacion> dal = null; 
+	public List<Detalle_Publicacion> listarTipo(Long id_publicacion) {
+		DDetallePublicacion<Detalle_Publicacion> dal = null; 
 		try {
-			dal = new DDetallePublicacion<DetallePublicacion>(DetallePublicacion.class, connection);			
+			dal = new DDetallePublicacion<Detalle_Publicacion>(Detalle_Publicacion.class, connection);			
 			return dal.listar(id_publicacion);
 		} catch (Exception e) {
 			e.printStackTrace();

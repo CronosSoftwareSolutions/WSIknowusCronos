@@ -53,10 +53,10 @@ public class Services {
 			Usuario usuario = bc.buscar(user);
 			if (usuario != null) {
 				if (usuario.getContrasena_usuario().equals(password)) {
-					Helper.response(usuario);
+					return Helper.response(usuario);
 				}
 			} else {
-				Helper.noResponse();
+				return Helper.noResponse();
 			}
 		} catch (Exception e) {
 			Log.error(e.getMessage(), e);
@@ -117,7 +117,7 @@ public class Services {
 			cm.setId_usuario(id_usuario); 
 			cm.setFecha(App.getCurrentTime()); 
 			if (bc.save(cm)) { 				
-				Helper.response(bp.searchById(id_publicacion));
+				return Helper.response(bp.searchById(id_publicacion));
 			}
 		} catch (Exception e) {
 			Log.error(e.getMessage(), e);
@@ -149,7 +149,7 @@ public class Services {
 			as.setId_publicacion(id_publicacion);
 			as.setId_usuario(id_usuario); 			
 			if (bc.save(as)) { 				
-				Helper.response(bp.searchById(id_publicacion)); 
+				return Helper.response(bp.searchById(id_publicacion)); 
 			}
 		} catch (Exception e) {
 			Log.error(e.getMessage(), e);
