@@ -73,9 +73,9 @@ public class Services {
 	}
 
 	@GET()
-	@Path("/GetLastPublications/{tipo}")
+	@Path("/GetLastPublications/{tipo}/{filter}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getArticulos(@PathParam("tipo") Long tipo) {
+	public Response getArticulos(@PathParam("tipo") Long tipo, @PathParam("filter") String filter) {
 		Log.info("GetLastPublications");
 		BPublicacion bp = null;
 		try {
@@ -84,7 +84,7 @@ public class Services {
 			if (t == 0) {
 				return Helper.response(bp.listar());
 			} else {
-				return Helper.response(bp.listarTipo(t));
+				return Helper.response(bp.listarTipo(t, filter));
 			}
 		} catch (Exception e) {
 			Log.error(e.getMessage(), e);

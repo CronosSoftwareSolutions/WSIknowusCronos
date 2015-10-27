@@ -41,12 +41,12 @@ public class BPublicacion extends Business {
 	}
 	
 	
-	public List<Publicacion> listarTipo(int tipo) {		
+	public List<Publicacion> listarTipo(int tipo, String filter) {		
 		List<Publicacion> result = new ArrayList<Publicacion>();
 		DPublicacion<Publicacion> dal = null; 
 		try {
 			dal = new DPublicacion<Publicacion>(Publicacion.class, connection);
-			result= dal.listar(tipo);
+			result= dal.listar(tipo, filter);
 			loadRelations(result); 
 		} catch (Exception e) {
 			e.printStackTrace();

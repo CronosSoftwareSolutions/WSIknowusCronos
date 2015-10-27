@@ -25,8 +25,13 @@ public class DPublicacion<T> extends Data<T> {
 		return this.list(query);
 	}
 	
-	public List<T> listar(int tipo) {
-		String query = String.format("SELECT * FROM %s where tipo=%d order by fecha_publicacion desc limit 30", this.tableName, tipo);
+	public List<T> listar(int tipo, String filter) {
+		String query = "";
+		if(filter.length()<3){
+			query = String.format("SELECT * FROM %s where tipo=%d order by fecha_publicacion desc limit 30", this.tableName, tipo);
+		}else{
+			query = "SELECT * FROM " + tableName +" where tipo=" + tipo +" and titulo like '%" + filter+ "%' order by fecha_publicacion desc limit 30";
+		}		
 		List<T> lista = this.list(query);
 		return lista;
 	}	
