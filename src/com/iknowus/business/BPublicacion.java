@@ -24,7 +24,11 @@ public class BPublicacion extends Business {
 		DPublicacion<Publicacion> dal = null; 
 		try {
 			dal = new DPublicacion<Publicacion>(Publicacion.class, connection);
-			return dal.buscar(Id);
+			Publicacion pub = dal.buscar(Id);
+			List<Publicacion> lst = new ArrayList<Publicacion>();
+			lst.add(pub);
+			loadRelations(lst); 
+			return pub;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

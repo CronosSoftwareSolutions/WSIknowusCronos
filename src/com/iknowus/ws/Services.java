@@ -109,6 +109,7 @@ public class Services {
 		BComentario bc = null;
 		try {
 			bc = new BComentario();
+			BPublicacion bp = new BPublicacion(bc.getConexion());
 			Comentario cm = new Comentario();
 			cm.setAction(Action.Insert);
 			cm.setTitulo(comentario);
@@ -116,7 +117,7 @@ public class Services {
 			cm.setId_usuario(id_usuario); 
 			cm.setFecha(App.getCurrentTime()); 
 			if (bc.save(cm)) { 				
-				Helper.response(cm);
+				Helper.response(bp.searchById(id_publicacion));
 			}
 		} catch (Exception e) {
 			Log.error(e.getMessage(), e);
@@ -141,13 +142,14 @@ public class Services {
 		BAsistencia bc = null;
 		try {
 			bc = new BAsistencia();
+			BPublicacion bp = new BPublicacion(bc.getConexion()); 
 			Asistencia as = new Asistencia();
 			as.setAction(Action.Insert);
 			as.setDetalle_asistencia(detalle); 
 			as.setId_publicacion(id_publicacion);
 			as.setId_usuario(id_usuario); 			
 			if (bc.save(as)) { 				
-				Helper.response(as);
+				Helper.response(bp.searchById(id_publicacion)); 
 			}
 		} catch (Exception e) {
 			Log.error(e.getMessage(), e);
